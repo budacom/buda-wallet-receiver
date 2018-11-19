@@ -71,7 +71,7 @@ contract('BudaWalletReceiver', function(accounts) {
         assert.equal(events.length, 1);
         assert.equal(events[0].args.from, instance.address);
         assert.equal(events[0].args.to, wallet);
-        assert.equal(events[0].args.value.toNumber(), 10);
+        assert.equal(events[0].args.tokens.toNumber(), 10);
 
         console.log(`Gas used: ${tx.receipt.gasUsed}`);
         assert.isBelow(tx.receipt.gasUsed, 30000);
